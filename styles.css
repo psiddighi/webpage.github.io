@@ -1,7 +1,7 @@
 /* landing page */
 body {
     overflow: hidden; /* Voorkomt scrollen tijdens de animatie */
-    background-image: url('../images/bc2.png');
+    background-image: url('bc2.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
