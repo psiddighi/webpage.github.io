@@ -26,3 +26,9 @@ document.addEventListener("DOMContentLoaded", function() {
         blackout.remove(); // Verwijder de blackout uit de DOM
     }, 4000); // De vertraging instellen op twee keer de waarde van de animatieduur van de zwarte pagina
 });
+
+window.onload = function() {
+    setTimeout(function() {
+      document.getElementById('freepik_stories-code-typing').style.display = 'block';
+    }, 2100); // 5000 milliseconds = 5 seconds
+  };
