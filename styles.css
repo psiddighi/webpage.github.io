@@ -1,0 +1,241 @@
+/* landing page */
+body {
+    overflow: hidden; /* Voorkomt scrollen tijdens de animatie */
+    background-image: url('../images/bc2.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Set the height to the height of the viewport */
+}
+
+.blackout {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 1;
+    z-index: 9999; /* Zet z-index op een hoog getal om ervoor te zorgen dat het bovenop andere elementen blijft */
+    animation: fadeOut 3s ease-in-out forwards;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+/* Loading */
+.loading {
+    --speed-of-animation: 2s; /* Instellen op dezelfde waarde als de animatieduur van de zwarte pagina */
+    --gap: 6px;
+    --first-color: #4c86f9;
+    --second-color: #49a84c;
+    --third-color: #f6bb02;
+    --fourth-color: #f6bb02;
+    --fifth-color: #2196f3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    gap: 6px;
+    height: 100px;
+    animation: fadeOut 2s ease-in-out forwards;
+    position: fixed; /* Zorgt ervoor dat de loader altijd in het midden van het scherm blijft, zelfs bij scrollen */
+    top: 50%; /* Plaatst de bovenkant van de loader in het midden van het scherm */
+    left: 50%; /* Plaatst de linkerkant van de loader in het midden van het scherm */
+    transform: translate(-50%, -50%); /* Verplaatst de loader naar links en omhoog met de helft van zijn breedte en hoogte, waardoor de loader precies in het midden van het scherm komt te staan */
+    z-index: 10000; /* Zorgt ervoor dat de loader bovenop de zwarte animatie komt */
+}
+
+.loading span {
+    width: 6vh;
+    height: 10vh;
+    background: var(--first-color);
+    animation: scale var(--speed-of-animation) ease-in-out infinite;
+}
+
+.loading span:nth-child(2) {
+    background: var(--second-color);
+    animation-delay: -0.8s;
+}
+
+.loading span:nth-child(3) {
+    background: var(--third-color);
+    animation-delay: -0.7s;
+}
+
+.loading span:nth-child(4) {
+    background: var(--fourth-color);
+    animation-delay: -0.6s;
+}
+
+.loading span:nth-child(5) {
+    background: var(--fifth-color);
+    animation-delay: -0.5s;
+}
+
+@keyframes scale {
+    0%, 40%, 100% {
+        transform: scaleY(0.05);
+    }
+
+    20% {
+        transform: scaleY(1);
+    }
+}
+
+@keyframes fadeOut {
+    0%, 50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/*  */
+.content {
+    width: 50%; /* Adjust as needed */
+    margin-left: 47.5%; /* Adjust as needed */
+    margin-top: -50vh; /* Adjust as needed */
+    line-height: 1.7em;
+}
+
+h1, h2 {
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* horizontale verschuiving, verticale verschuiving, vervaging, kleur */
+}
+
+p {
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* horizontale verschuiving, verticale verschuiving, vervaging, kleur */
+}
+
+/* navbar */
+.radio-inputs {
+    font-family: 'Arial', sans-serif;
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 0.5rem;
+    background-color: #006f88;
+    box-sizing: border-box;
+    box-shadow: 0 0 0px 1px rgba(0, 119, 255, 0.06);
+    padding: 0.25rem;
+    width: 300px;
+    font-size: 14px;
+    align-items: center;
+    margin: 0 auto; /* Deze regel toegevoegd */
+}
+
+
+.radio-inputs .radio {
+    flex: 1 1 auto;
+    text-align: center;
+}
+
+.radio-inputs .radio input {
+    display: none;
+}
+
+.radio-inputs .radio .name {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    border: none;
+    padding: .5rem 0;
+    color: rgb(255, 255, 255);
+    transition: all .15s ease-in-out;
+}
+
+.radio-inputs .radio input:checked + .name {
+    background-color: #d450c9;
+    font-weight: 600;
+}
+
+/* title */
+.title1 {
+    font-family: 'Arial', sans-serif; /* Verander dit naar het gewenste lettertype */
+    font-weight: bold;
+    font-size: 5em; /* Pas dit aan naar de gewenste grootte */
+}
+
+.styled-paragraph {
+    font-family: 'Arial', sans-serif; /* Verander dit naar het gewenste lettertype */
+    font-size: 1em; /* Pas dit aan naar de gewenste grootte */
+    letter-spacing: 2px;
+}
+
+/* logo */
+.spinner {
+    width: 40.4px;
+    height: 40.4px;
+    --clr: rgb(255, 0, 179);
+    --clr-alpha: rgb(247, 197, 159,.1);
+    animation: spinner 1.6s infinite ease;
+    transform-style: preserve-3d;
+    margin-left: 5vw;
+  }
+  
+  .spinner > div {
+    background-color: var(--clr-alpha);
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    border: 3.5px solid var(--clr);
+  }
+  
+  .spinner div:nth-of-type(1) {
+    transform: translateZ(-35.2px) rotateY(180deg);
+  }
+  
+  .spinner div:nth-of-type(2) {
+    transform: rotateY(-270deg) translateX(50%);
+    transform-origin: top right;
+  }
+  
+  .spinner div:nth-of-type(3) {
+    transform: rotateY(270deg) translateX(-50%);
+    transform-origin: center left;
+  }
+  
+  .spinner div:nth-of-type(4) {
+    transform: rotateX(90deg) translateY(-50%);
+    transform-origin: top center;
+  }
+  
+  .spinner div:nth-of-type(5) {
+    transform: rotateX(-90deg) translateY(50%);
+    transform-origin: bottom center;
+  }
+  
+  .spinner div:nth-of-type(6) {
+    transform: translateZ(35.2px);
+  }
+  
+  @keyframes spinner {
+    0% {
+      transform: rotate(45deg) rotateX(-25deg) rotateY(25deg);
+    }
+  
+    50% {
+      transform: rotate(45deg) rotateX(-385deg) rotateY(25deg);
+    }
+  
+    100% {
+      transform: rotate(45deg) rotateX(-385deg) rotateY(385deg);
+    }
+  }
+  
